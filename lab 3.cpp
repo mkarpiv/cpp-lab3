@@ -34,7 +34,7 @@ public:
             strcpy_s(array[index], length + 1, str);
         }
         else {
-            cerr << "²íäåêñ ïîçà ìåæàìè" << endl;
+            cerr << "Ð†Ð½Ð´ÐµÐºÑ Ð¿Ð¾Ð·Ð° Ð¼ÐµÐ¶Ð°Ð¼Ð¸" << endl;
         }
     }
 
@@ -43,7 +43,7 @@ public:
             return array[index];
         }
         else {
-            cerr << "²íäåêñ ïîçà ìåæàìè" << endl;
+            cerr << "Ð†Ð½Ð´ÐµÐºÑ Ð¿Ð¾Ð·Ð° Ð¼ÐµÐ¶Ð°Ð¼Ð¸" << endl;
             return nullptr;
         }
     }
@@ -103,51 +103,51 @@ int main() {
     SetConsoleOutputCP(1251);
 
     int size1, size2;
-    cout << "Ââåä³òü ðîçì³ð ïåðøîãî ìàñèâó: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€Ð¾Ð·Ð¼Ñ–Ñ€ Ð¿ÐµÑ€ÑˆÐ¾Ð³Ð¾ Ð¼Ð°ÑÐ¸Ð²Ñƒ: ";
     cin >> size1;
 
     StringArray array1(size1);
     for (int i = 0; i < size1; ++i) {
         char buffer[100];
-        cout << "Ââåä³òü ðÿäîê " << i << " äëÿ ïåðøîãî ìàñèâó: ";
-        cin.ignore(); // Ùîá óíèêíóòè ïðîïóñêó ââåäåííÿ
+        cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€ÑÐ´Ð¾Ðº " << i << " Ð´Ð»Ñ Ð¿ÐµÑ€ÑˆÐ¾Ð³Ð¾ Ð¼Ð°ÑÐ¸Ð²Ñƒ: ";
+        cin.ignore(); 
         cin.getline(buffer, 100);
         array1.setString(i, buffer);
     }
 
-    cout << "Ââåä³òü ðîçì³ð äðóãîãî ìàñèâó: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€Ð¾Ð·Ð¼Ñ–Ñ€ Ð´Ñ€ÑƒÐ³Ð¾Ð³Ð¾ Ð¼Ð°ÑÐ¸Ð²Ñƒ: ";
     cin >> size2;
 
     StringArray array2(size2);
     for (int i = 0; i < size2; ++i) {
         char buffer[100];
-        cout << "Ââåä³òü ðÿäîê " << i << " äëÿ äðóãîãî ìàñèâó: ";
-        cin.ignore(); // Ùîá óíèêíóòè ïðîïóñêó ââåäåííÿ
+        cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€ÑÐ´Ð¾Ðº " << i << " Ð´Ð»Ñ Ð´Ñ€ÑƒÐ³Ð¾Ð³Ð¾ Ð¼Ð°ÑÐ¸Ð²Ñƒ: ";
+        cin.ignore(); 
         cin.getline(buffer, 100);
         array2.setString(i, buffer);
     }
 
-    cout << "Ïåðøèé ìàñèâ:" << endl;
+    cout << "ÐŸÐµÑ€ÑˆÐ¸Ð¹ Ð¼Ð°ÑÐ¸Ð²:" << endl;
     for (int i = 0; i < array1.getSize(); ++i) {
         cout << array1.getString(i) << endl;
     }
     cout << endl;
 
-    cout << "Äðóãèé ìàñèâ:" << endl;
+    cout << "Ð”Ñ€ÑƒÐ³Ð¸Ð¹ Ð¼Ð°ÑÐ¸Ð²:" << endl;
     for (int i = 0; i < array2.getSize(); ++i) {
         cout << array2.getString(i) << endl;
     }
     cout << endl;
 
     StringArray merged = StringArray::mergeArrays(array1, array2);
-    cout << "Îá'ºäíàíèé ìàñèâ:" << endl;
+    cout << "ÐžÐ±'Ñ”Ð´Ð½Ð°Ð½Ð¸Ð¹ Ð¼Ð°ÑÐ¸Ð²:" << endl;
     for (int i = 0; i < merged.getSize(); ++i) {
         cout << merged.getString(i) << endl;
     }
     cout << endl;
 
     StringArray mergedUnique = StringArray::mergeArraysUnique(array1, array2);
-    cout << "Îá'ºäíàíèé óí³êàëüíèé ìàñèâ:" << endl;
+    cout << "ÐžÐ±'Ñ”Ð´Ð½Ð°Ð½Ð¸Ð¹ ÑƒÐ½Ñ–ÐºÐ°Ð»ÑŒÐ½Ð¸Ð¹ Ð¼Ð°ÑÐ¸Ð²:" << endl;
     for (int i = 0; i < mergedUnique.getSize(); ++i) {
         cout << mergedUnique.getString(i) << endl;
     }
